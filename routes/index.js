@@ -54,7 +54,7 @@ router.post('/pay', function(req, res, next) {
       var order = orderInfo.data;
       var url = ali.webPay({
         body: order.mobile+ 'order',
-        subject: "ttt1",
+        subject: "租车",
         outTradeId: order.id,
         timeout: '90m',
         amount: "0.01",
@@ -74,6 +74,7 @@ router.post('/pay', function(req, res, next) {
     //res.send(url);
     console.log(url_API);
     return res.send({
+      result: 0,
       url: url_API
     });
   })
