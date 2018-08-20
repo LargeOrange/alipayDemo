@@ -72,8 +72,7 @@ router.post('/pay', function(req, res, next) {
 
     var url_API = 'https://openapi.alipay.com/gateway.do?' + url;
     //res.send(url);
-    res.redirect(url_API);
-    res.json({url:url_API})
+    return res.redirect(url_API);
   })
 });
 
